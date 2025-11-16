@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Noto+Sans+Georgian:wght@100..900&family=Outfit:wght@100..900&family=Story+Script&display=swap');
+
 @import "tailwindcss";
 
-*{
+* {
   font-family: "Story Script", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @layer base {
-  button{
+  button {
     @apply cursor-pointer;
+  }
+
+  input:not([type="checkbox"]) {
+    @apply outline-none border border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:border-blue-500;
+  }
+
+  textarea {
+    @apply outline-none border border-gray-300 rounded-lg resize-none focus:ring focus:ring-blue-500 focus:border-blue-500;
   }
 }
