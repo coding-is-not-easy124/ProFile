@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { dummyResumeData } from '../assets/assets';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIcon, GraduationCap, Sparkles, User } from 'lucide-react';
+import PersonalInfoForm from '../components/PersonalInfoForm';
+import ResumePreview from '../components/ResumePreview';
 
 const ResumeBuilder = () => {
 
@@ -83,15 +85,19 @@ const ResumeBuilder = () => {
               { /* Form Content */ }
               <div className='space-y-6'>
                   {activeSection.id === 'personal' && (
-                    <div></div>
+                    <PersonalInfoForm data={resumeData.personal_info} onChange={(data) => setResumeData(prev => ({...prev, personal_info: data }))} removeBackground={removeBackground} setRemoveBackground={setRemoveBackground} />
                   )}
               </div>
             </div>
           </div>
 
           { /* Right Panel - Resume Preview */ }
-          <div>
-
+          <div className='lg:col-span-7 max-lg:mt-6'>
+            <div>
+              {/* ---- buttons ---- */}
+            </div>
+            <ResumePreview data={resumeData} template={resumeData.template} accentColor={resumeData.accent_color} />
+            {/* resume preview will go here */}
           </div>
         </div>
       </div>
